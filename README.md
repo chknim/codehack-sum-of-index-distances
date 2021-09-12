@@ -37,7 +37,7 @@ Given An = Array of size n as the input of this riddle.
 And Rn = Array of size n as the out put of this riddle.
 Then Rj = Sum of distance of index j to each index within the array of An that has the same value as that of index j;
 ```
-<img style="font-color: white; background-color: white; width: 100%; height: 20px; padding: 5px" src="https://render.githubusercontent.com/render/math?math=R_{j}=\sum_{i=0}^{m}x_{i} - 2\sum_{i=0}^{j-1}x_{i} %2B (2j - m)x_{j}">
+<img style="font-color: white; background-color: white; width: 800; height: 20px; padding: 5px" src="https://render.githubusercontent.com/render/math?math=R_{j}=\sum_{i=0}^{m}x_{i} - 2\sum_{i=0}^{j-1}x_{i} %2B (2j - m)x_{j}" />
 
 ```
 Where:
