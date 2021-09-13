@@ -10,10 +10,12 @@ function buildHash(input: number[], callback?: any) {
   return valueHash;
 }
 
-function findDistancesBF(input: number[]) {
+function findDistancesBF(input: number[], isVerboseMode?: boolean) {
   const resultList = [];
-  /*console.log('Brute force input:');
-  console.log(input);*/
+  if (isVerboseMode) {
+    console.log('Brute force input:');
+    console.log(input);
+  }
   const startTimer = Date.now();
   const valueHash = buildHash(input);
   Object.keys(valueHash).forEach(key => {
@@ -26,21 +28,17 @@ function findDistancesBF(input: number[]) {
       resultList[idxSelf] = result;
     });
   });
-  /*console.log('Brute force: ' + (Date.now() - startTimer) + ' ms');
-  console.log('Brute force output:');
-  console.log(resultList);*/
-}
-
-function fastMultiply(amount, times) {
-  let result = 0;
-  for (let i = 0; i < times; i++) {
-    result += amount;
+  if (isVerboseMode) {
+    console.log('Brute force: ' + (Date.now() - startTimer) + ' ms');
+    console.log('Brute force output:');
+    console.log(resultList);
   }
-  return result;
 }
 
-function findDistances(input: number[]) {
+function findDistances(input: number[], isVerboseMode?: boolean) {
   const resultList = [];
+  if (isVerboseMode) {
+  }
   /*console.log('Optimized input:');
   console.log(input);*/
   const startTimer = Date.now();
@@ -59,9 +57,11 @@ function findDistances(input: number[]) {
       previousSum += idxSelf;
     });
   });
-  /*console.log('Optimized: ' + (Date.now() - startTimer) + ' ms');
-  console.log('Optimized output:');
-  console.log(resultList);*/
+  if (isVerboseMode) {
+    console.log('Optimized: ' + (Date.now() - startTimer) + ' ms');
+    console.log('Optimized output:');
+    console.log(resultList);
+  }
 }
 
 function randomInput(size: number) {
@@ -78,14 +78,16 @@ function main() {
   const inputSize: number = parseInt(process.argv[2]);
   console.log('input size is ' + inputSize);
   if (!inputSize || inputSize < 0 || inputSize > 1000000) {
+    console.log('Invalid input size which must be 0 < size < 1000000');
     return -1;
   }
 
+  const isVerboseMode = process.argv[3] === 'verbose';
   const input = randomInput(inputSize);
   const startTimer = Date.now();
-  findDistances(input);
+  findDistances(input, isVerboseMode);
   const endOpt = Date.now();
-  findDistancesBF(input);
+  findDistancesBF(input, isVerboseMode);
   const endBF = Date.now();
   console.log(`Optimized: ${endOpt - startTimer} ms`);
   console.log(`Brute force: ${endBF - endOpt} ms`);
