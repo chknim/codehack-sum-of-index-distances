@@ -38,10 +38,10 @@ And Rn = Array of size n as the out put of this riddle.
 Then Rj = Sum of distance of index j to each index within the array of An that has the same value as that of index j;
 ```
 
-If formula image below does not show up, click [here](https://render.githubusercontent.com/render/math?math=R_{j}=\sum_{i=0}^{m}x_{i}-2\sum_{i=0}^{j-1}x_{i}%2B(2j-m)x_{j})
+Note: formula below is not visible in dark mode.  Alternatively, click [here](https://render.githubusercontent.com/render/math?math=R_{j}=\sum_{i=0}^{m}x_{i}-2\sum_{i=0}^{j-1}x_{i}%2B(2j-m)x_{j})
 
-<a href="https://render.githubusercontent.com/render/math?math=R_{j}=\sum_{i=0}^{m}x_{i}-2\sum_{i=0}^{j-1}x_{i}%2B(2j-m)x_{j}">
-<img width="800" height="40" style="font-color: white !important; padding: 10px" src="https://render.githubusercontent.com/render/math?math=R_{j}=\sum_{i=0}^{m}x_{i}-2\sum_{i=0}^{j-1}x_{i}%2B(2j-m)x_{j}"/></a>
+<a style="background-color: #fff !important;" href="https://render.githubusercontent.com/render/math?math=R_{j}=\sum_{i=0}^{m}x_{i}-2\sum_{i=0}^{j-1}x_{i}%2B(2j-m)x_{j}">
+<img width="800" height="40" style="background: #fff !important; padding: 10px" src="https://render.githubusercontent.com/render/math?math=R_{j}=\sum_{i=0}^{m}x_{i}-2\sum_{i=0}^{j-1}x_{i}%2B(2j-m)x_{j}"/></a>
 
 ```
 Where:
@@ -59,17 +59,17 @@ Procedure:
 
 ## Running the program
 
-Compile the program
+Compile the program to get js file
 ```
 tsc main.ts
 ```
 
-Executin the program; e.g. below will run with array of size 100000 with random input
+Execute the program; e.g. below will run with array of size 100000 with random input
 ```
 node main.js 100000
 ```
 
 ## Any improvement or suggestions
 
-I am looking forward to hearing your thoughts cnimmana@gmail.com
+I am looking forward to hearing your thoughts and comments (cnimmana@gmail.com)
 
